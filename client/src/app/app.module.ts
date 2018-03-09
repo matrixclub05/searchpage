@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { Ng2CompleterModule } from "ng2-completer";
+
 
 import { AppComponent } from './app.component';
 import {SearchComponent} from "./search/search.component";
@@ -20,7 +20,6 @@ import { UserComponent } from './user/user.component';
   imports: [
     BrowserModule,
     FormsModule,
-    Ng2CompleterModule,
     HttpModule
   ],
   providers: [SearchService],
