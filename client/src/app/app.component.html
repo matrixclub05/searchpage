@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="search-title">CLICKTALE PEOPLE SEARCH</h1>
+  <search-input (userData)="onFoundData($event)"></search-input>
+
+  <hr>
+
+  <div class="row">
+    <div class="list-group col-sm-8">
+      <user-item *ngFor="let item of foundData" [user]="item" (click)="userSelected(item)"></user-item>
+
+    </div>
+    <div class="col-sm-4" *ngIf="selectedUser">
+      <user [user]="selectedUser"></user>
+    </div>
+  </div>
+
+</div>
+
+

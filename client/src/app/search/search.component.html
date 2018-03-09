@@ -1,0 +1,21 @@
+<form class="form-inline" (submit)="onSubmit()" #f="ngForm">
+
+  <div class="form-group mx-sm-3 mb-2">
+    <input type="text"
+           class="form-control w-100"
+           id="searchField"
+           (keyup)="onKeyUp($event.target.value)"
+           autocomplete="off"
+           [value]="selectedName"
+    >
+    <div class="autocomplete-container" *ngIf="!isClosed" tabindex="-1">
+      <ul *ngIf="results" class="list-group">
+        <li *ngFor="let result of results | slice:0:9" class="list-group-item list-group-item-action"
+            (click)="onRecordSelect(result)">
+          <a href="javascript:void(0)">{{result}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Search</button>
+</form>
